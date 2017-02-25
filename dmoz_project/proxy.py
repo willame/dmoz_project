@@ -21,9 +21,6 @@ def counter(start_at=0):
     return incr
 
 
-# 定义方法使用代理打开链接
-
-
 def use_proxy(browser, proxy, url):
     # Open browser with proxy
     # 用代理打开浏览器
@@ -94,7 +91,8 @@ class GetIps(object):
         https_ips = []
         for ip in self.ips:
             protocol = ip[3]
-            proxy = {protocol: 'http://%s:%s' % (ip[1], ip[2])}
+            # 代理的key是协议，协议必须使用小写
+            proxy = {protocol.lower(): 'http://%s:%s' % (ip[1], ip[2])}
             if not self.judge_ip(proxy, protocol.endswith('P')):
                 unavailable_ids.append((UNAVAILABLE_FLAG, ip[0]))
             elif self.judge_ip(proxy, protocol.endswith('P')) and protocol.endswith('P'):

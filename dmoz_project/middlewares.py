@@ -80,3 +80,4 @@ class ProxyMiddleware(object):
             request.meta['proxy'] = ips['https'][n]
             logging.info('[ProxyMiddleware] Set proxy %s' % (ips['https'][n],))
             ProxyMiddleware.https_n = n + 1
+        pass

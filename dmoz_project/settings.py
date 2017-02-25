@@ -25,13 +25,13 @@ MYSQL_PASSWD = 'root'
 ITEM_PIPELINES = {
     # 'dmoz_project.pipelines.JsonWithEncodingPipeline': 300,
     # 'dmoz_project.pipelines.Dmoz2StorePipline': 200,
-    'dmoz_project.pipelines.XiciPipeline': 200
+    # 'dmoz_project.pipelines.XiciPipeline': 200
 }
 
 # 保存项目中启用的下载中间件及其顺序的字典。默认:: {}
 DOWNLOADER_MIDDLEWARES = {
-    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-    # 'dmoz_project.middlewares.ProxyMiddleware': 100,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+    'dmoz_project.middlewares.ProxyMiddleware': 100,
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

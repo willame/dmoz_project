@@ -18,7 +18,7 @@ class XiciSpider(scrapy.Spider):
             'Referer': 'http://www.xicidaili.com/nn/',
             'If-None-Match': 'W/"60519eb49429745a8ba20e6d6dd198c3"'
         }
-        return [scrapy.Request('http://www.xicidaili.com/nn/%d' % (i,), headers=headers) for i in range(1, 5)]
+        return [scrapy.Request('http://www.xicidaili.com/nn/%d' % (i,), headers=headers) for i in range(1, 3)]
 
     def parse(self, response):
         trs = response.xpath('//table[@id="ip_list"]/tr')
