@@ -30,15 +30,15 @@ ITEM_PIPELINES = {
 
 # 保存项目中启用的下载中间件及其顺序的字典。默认:: {}
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-    'dmoz_project.middlewares.ProxyMiddleware': 100,
+    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+    # 'dmoz_project.middlewares.ProxyMiddleware': 100,
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'dmoz_project (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -58,10 +58,10 @@ ROBOTSTXT_OBEY = True
 # TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-# DEFAULT_REQUEST_HEADERS = {
-#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-#   'Accept-Language': 'en',
-# }
+DEFAULT_REQUEST_HEADERS = {
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'en',
+}
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
